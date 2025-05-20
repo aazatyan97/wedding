@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Մարիետա &amp; Արման | Հարսանեկան Հրավեր</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Montserrat:wght@200;300;400;500&amp;family=Noto+Serif+Armenian:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f5f5f5;
+            --accent-color: #a8a8a8;
+            --text-color: #333333;
+            --light-text: #777777;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Noto Serif Armenian', sans-serif;
+            color: var(--text-color);
+            background-color: #ffffff;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
+            scroll-behavior: smooth;
+        }
+        
+        .serif {
+            font-family: 'Cormorant Garamond', 'Noto Serif Armenian', serif;
+            letter-spacing: 0.03em;
+        }
+        
+        .container {
+            max-width: 1400px;
+        }
+        
+        .section-title {
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .elegant-divider {
+            width: 100px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 1.5rem auto;
+        }
+        
+        .btn-primary {
+            background-color: rgba(26, 26, 26, 0.8);
+            color: white;
+            padding: 0.75rem 2.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-primary:hover {
+            background-color: rgba(26, 26, 26, 1);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.75rem 2.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: 5rem;
+            right: 5rem;
+            text-align: right;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .event-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .form-input {
+            border: 1px solid #e2e2e2;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
+        }
+        
+        .timeline-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        
+        .timeline-line {
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .calendar {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calendar-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: #f0f0f0;
+        }
+        
+        .calendar-day {
+            background-color: white;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .calendar-day.highlight {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calendar-day.faded {
+            color: #cccccc;
+        }
+        
+        .calendar-weekday {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #777777;
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .section-bg {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                bottom: 2rem;
+                right: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-content {
+                bottom: 2rem;
+                right: 1rem;
+                left: 1rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-95 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-light text-gray-800 serif">Մ &amp; Ա  ❤️</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Գլխավոր</a>
+                    <a href="#invitation" class="nav-link">Հրավեր</a>
+                    <a href="#schedule" class="nav-link">Ծրագիր</a>
+                    <a href="#event" class="nav-link">Միջոցառում</a>
+                    <a href="#rsvp" class="nav-link">RSVP</a>
+                </div>
+                <button class="md:hidden text-gray-700" id="menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white pb-6 px-6" id="mobile-menu">
+            <a href="#home" class="block py-3 nav-link">Գլխավոր</a>
+            <a href="#invitation" class="block py-3 nav-link">Հրավեր</a>
+            <a href="#schedule" class="block py-3 nav-link">Ծրագիր</a>
+            <a href="#event" class="block py-3 nav-link">Միջոցառում</a>
+            <a href="#rsvp" class="block py-3 nav-link">RSVP</a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section with Photo and Names -->
+    <section id="home" class="hero-section" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:rgb(100,100,100);stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:rgb(50,50,50);stop-opacity:1\" /></linearGradient></defs><rect width=\"1200\" height=\"800\" fill=\"url(%23grad)\" /><circle cx=\"600\" cy=\"400\" r=\"200\" fill=\"%23333\" /><circle cx=\"600\" cy=\"350\" r=\"80\" fill=\"%23555\" /><rect x=\"500\" y=\"450\" width=\"200\" height=\"150\" fill=\"%23555\" /></svg>');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title serif mb-2">Մարիետա &amp; Արման</h1>
+            <p class="text-xl font-light">❤️</p>
+        </div>
+    </section>
+
+    <!-- 2. Invitation Section with Calendar -->
+    <section id="invitation" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center text-2xl mb-2">Մենք ամուսնանում ենք</h2>
+            <div class="elegant-divider"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 items-center">
+                <div class="space-y-8">
+                    <p class="text-xl font-light text-center md:text-left">
+                        Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր հարսանեկան արարողությանը, որը տեղի կունենա 2025 թվականի օգոստոսի 14-ին:
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto md:mx-0">
+                        <div class="countdown-item p-4 md:p-6 text-center">
+                            <div class="text-3xl md:text-4xl font-light text-gray-800" id="days">00</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider">Օր</div>
+                        </div>
+                        <div class="countdown-item p-4 md:p-6 text-center">
+                            <div class="text-3xl md:text-4xl font-light text-gray-800" id="hours">00</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider">Ժամ</div>
+                        </div>
+                        <div class="countdown-item p-4 md:p-6 text-center">
+                            <div class="text-3xl md:text-4xl font-light text-gray-800" id="minutes">00</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider">Րոպե</div>
+                        </div>
+                        <div class="countdown-item p-4 md:p-6 text-center">
+                            <div class="text-3xl md:text-4xl font-light text-gray-800" id="seconds">00</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-wider">Վայրկյան</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center md:text-left">
+                        <a href="#rsvp" class="btn-primary">Հաստատել Մասնակցությունը</a>
+                    </div>
+                </div>
+                
+                <div class="calendar max-w-sm mx-auto">
+                    <div class="calendar-header">
+                        <h3 class="text-xl font-light">Օգոստոս 2025</h3>
+                    </div>
+                    <div>
+                        <div class="calendar-grid">
+                            <div class="calendar-weekday">Երկ</div>
+                            <div class="calendar-weekday">Երք</div>
+                            <div class="calendar-weekday">Չրք</div>
+                            <div class="calendar-weekday">Հնգ</div>
+                            <div class="calendar-weekday">Ուրբ</div>
+                            <div class="calendar-weekday">Շբթ</div>
+                            <div class="calendar-weekday">Կիր</div>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="calendar-day faded">28</div>
+                            <div class="calendar-day faded">29</div>
+                            <div class="calendar-day faded">30</div>
+                            <div class="calendar-day faded">31</div>
+                            <div class="calendar-day">1</div>
+                            <div class="calendar-day">2</div>
+                            <div class="calendar-day">3</div>
+                            
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day">6</div>
+                            <div class="calendar-day">7</div>
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day">9</div>
+                            <div class="calendar-day">10</div>
+                            
+                            <div class="calendar-day">11</div>
+                            <div class="calendar-day">12</div>
+                            <div class="calendar-day">13</div>
+                            <div class="calendar-day highlight">14</div>
+                            <div class="calendar-day">15</div>
+                            <div class="calendar-day">16</div>
+                            <div class="calendar-day">17</div>
+                            
+                            <div class="calendar-day">18</div>
+                            <div class="calendar-day">19</div>
+                            <div class="calendar-day">20</div>
+                            <div class="calendar-day">21</div>
+                            <div class="calendar-day">22</div>
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day">26</div>
+                            <div class="calendar-day">27</div>
+                            <div class="calendar-day">28</div>
+                            <div class="calendar-day">29</div>
+                            <div class="calendar-day">30</div>
+                            <div class="calendar-day">31</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Schedule Section with Background Photo -->
+    <section id="schedule" class="section-bg py-24" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:rgb(80,80,80);stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:rgb(40,40,40);stop-opacity:1\" /></linearGradient></defs><rect width=\"1200\" height=\"800\" fill=\"url(%23grad)\" /><circle cx=\"600\" cy=\"300\" r=\"150\" fill=\"%23555\" /><rect x=\"450\" y=\"400\" width=\"300\" height=\"200\" fill=\"%23444\" /></svg>');">
+        <div class="section-overlay"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="section-title text-center text-2xl mb-2 text-white">Օրվա Ծրագիր</h2>
+            <div class="elegant-divider bg-white"></div>
+            
+            <div class="max-w-3xl mx-auto mt-16">
+                <div class="space-y-12">
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow h-24"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">13:30</h4>
+                            <p class="text-gray-200 mt-1">Հավաքվում ենք եկեղեցում</p>
+                            <p class="text-gray-300 text-sm mt-1">Հյուրերի ժամանում և տեղավորում</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow h-24"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">14:00</h4>
+                            <p class="text-gray-200 mt-1">Պսակադրության արարողություն</p>
+                            <p class="text-gray-300 text-sm mt-1">Սուրբ Գրիգոր Լուսավորիչ Եկեղեցում</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow h-24"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">15:30</h4>
+                            <p class="text-gray-200 mt-1">Լուսանկարահանում</p>
+                            <p class="text-gray-300 text-sm mt-1">Եկեղեցու այգում և շրջակայքում</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow h-24"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">17:00</h4>
+                            <p class="text-gray-200 mt-1">Ընդունելություն</p>
+                            <p class="text-gray-300 text-sm mt-1">Հյուրերի ժամանում Արմենիա Մարիոթ Հյուրանոց</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line flex-grow h-24"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">18:00</h4>
+                            <p class="text-gray-200 mt-1">Ընթրիք</p>
+                            <p class="text-gray-300 text-sm mt-1">Տոնական ճաշկերույթ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="flex flex-col items-center mr-8">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-xl font-light">20:00</h4>
+                            <p class="text-gray-200 mt-1">Պարեր և տոնակատարություն</p>
+                            <p class="text-gray-300 text-sm mt-1">Երաժշտություն, պարեր և զվարճանք</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Event Details Section - Ceremony -->
+    <section id="event" class="section-bg min-h-screen flex items-center" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:rgb(120,120,120);stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:rgb(70,70,70);stop-opacity:1\" /></linearGradient></defs><rect width=\"1200\" height=\"800\" fill=\"url(%23grad)\" /><path d=\"M600,200 L800,500 L400,500 Z\" fill=\"%23666\" /><rect x=\"500\" y=\"500\" width=\"200\" height=\"150\" fill=\"%23555\" /></svg>');">
+        <div class="section-overlay"></div>
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <h2 class="section-title text-center text-2xl mb-2 text-white">Միջոցառման Մանրամասները</h2>
+            <div class="elegant-divider bg-white"></div>
+            
+            <div class="max-w-2xl mx-auto mt-16">
+                <div class="event-card p-10 text-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-light text-gray-900 mb-6 serif">Պսակադրություն</h3>
+                    <div class="space-y-4 mb-8">
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ժամ:</span><br>14:00 - 15:30</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Վայր:</span><br>Սուրբ Գրիգոր Լուսավորիչ Եկեղեցի</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Հասցե:</span><br>Երևան, Տիգրան Մեծի պողոտա 65</p>
+                    </div>
+                    <button class="btn-primary" onclick="showMap(1)">
+                        Տեսնել Քարտեզը
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Event Details Section - Reception -->
+    <section class="section-bg min-h-screen flex items-center" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:rgb(90,90,90);stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:rgb(50,50,50);stop-opacity:1\" /></linearGradient></defs><rect width=\"1200\" height=\"800\" fill=\"url(%23grad)\" /><circle cx=\"600\" cy=\"400\" r=\"250\" fill=\"%23555\" /><rect x=\"500\" y=\"350\" width=\"200\" height=\"100\" fill=\"%23666\" /></svg>');">
+        <div class="section-overlay"></div>
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="max-w-2xl mx-auto">
+                <div class="event-card p-10 text-center">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-light text-gray-900 mb-6 serif">Հարսանեկան Խնջույք</h3>
+                    <div class="space-y-4 mb-8">
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ժամ:</span><br>17:00 - 24:00</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Վայր:</span><br>Արմենիա Մարիոթ Հյուրանոց</p>
+                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Հասցե:</span><br>Երևան, Ամիրյան փողոց 1</p>
+                    </div>
+                    <button class="btn-primary" onclick="showMap(2)">
+                        Տեսնել Քարտեզը
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. RSVP Section -->
+    <section id="rsvp" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center text-2xl mb-2">Հաստատեք Ձեր Մասնակցությունը</h2>
+            <div class="elegant-divider"></div>
+            
+            <div class="max-w-2xl mx-auto mt-16">
+                <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">
+                    Խնդրում ենք հաստատել Ձեր մասնակցությունը մինչև Հուլիսի 14-ը։ 
+                    Մենք անհամբեր սպասում ենք Ձեզ մեր հատուկ օրը։
+                </p>
+                
+                <form id="rsvp-form" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label for="name" class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Անուն Ազգանուն</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Էլ․ հասցե</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Հեռախոսահամար</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Կմասնակցե՞ք</label>
+                        <div class="flex space-x-8 mt-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="attendance" value="yes" class="mr-2 text-gray-800" checked>
+                                <span class="text-gray-600">Այո</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="attendance" value="no" class="mr-2 text-gray-800">
+                                <span class="text-gray-600">Ոչ</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="guests" class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Հյուրերի քանակ</label>
+                        <select id="guests" class="form-input">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-500 text-sm uppercase tracking-wider mb-2">Հաղորդագրություն (ոչ պարտադիր)</label>
+                        <textarea id="message" rows="4" class="form-input"></textarea>
+                    </div>
+                    
+                    <div class="text-center pt-4">
+                        <button type="submit" class="btn-primary">
+                            Ուղարկել
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-light mb-6 serif">Մարիետա &amp; Արման</h2>
+            <p class="text-gray-300 mb-8 font-light">Օգոստոսի 14, 2025</p>
+            
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="text-gray-300 hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="text-sm text-gray-400 font-light">&amp;copy; 2025 Մարիետա &amp; Արման | Բոլոր իրավունքները պաշտպանված են</p>
+        </div>
+    </footer>
+
+    <!-- Map Modal -->
+    <div id="map-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-3xl w-full p-8 relative">
+            <button id="close-map" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 id="map-title" class="text-2xl font-light text-gray-900 mb-6 serif">Քարտեզ</h3>
+            <div id="map-container" class="h-96 bg-gray-100 rounded-lg">
+                <!-- Yandex Map will be loaded here -->
+            </div>
+            <div class="mt-8 text-center">
+                <p id="map-address" class="text-gray-600 mb-6">Հասցե կհայտնվի այստեղ</p>
+                <a id="yandex-directions" href="#" target="_blank" class="btn-primary">
+                    Բացել Yandex Maps-ում
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-8 text-center">
+            <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-light text-gray-900 mb-4 serif">Շնորհակալություն</h3>
+            <p class="text-gray-600 mb-8">Ձեր պատասխանը հաջողությամբ ուղարկվել է։ Մենք անհամբեր սպասում ենք Ձեզ մեր հատուկ օրը։</p>
+            <button id="close-success" class="btn-primary">
+                Փակել
+            </button>
+        </div>
+    </div>
+
+    <!-- Yandex Maps API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&amp;lang=hy_AM"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('August 14, 2025 14:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+            }
+        }
+        
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Yandex Maps initialization
+        let myMap;
+        let currentLocationId = 0;
+        
+        // Locations data
+        const locations = [
+            {
+                id: 1,
+                title: 'Սուրբ Գրիգոր Լուսավորիչ Եկեղեցի',
+                address: 'Երևան, Տիգրան Մեծի պողոտա 65',
+                coordinates: [40.177200, 44.515800], // Approximate coordinates
+                yandexUrl: 'https://yandex.ru/maps/?text=Երևան,+Տիգրան+Մեծի+պողոտա+65'
+            },
+            {
+                id: 2,
+                title: 'Արմենիա Մարիոթ Հյուրանոց',
+                address: 'Երևան, Ամիրյան փողոց 1',
+                coordinates: [40.181700, 44.512800], // Approximate coordinates
+                yandexUrl: 'https://yandex.ru/maps/?text=Երևան,+Ամիրյան+փողոց+1'
+            }
+        ];
+        
+        // Initialize Yandex Maps
+        ymaps.ready(initMaps);
+        
+        function initMaps() {
+            // Map will be initialized when needed
+        }
+        
+        function createMap(locationId) {
+            const location = locations.find(loc => loc.id === locationId);
+            
+            if (!location) return;
+            
+            // Destroy previous map if exists
+            if (myMap) {
+                myMap.destroy();
+            }
+            
+            // Create new map
+            myMap = new ymaps.Map('map-container', {
+                center: location.coordinates,
+                zoom: 16,
+                controls: ['zoomControl', 'fullscreenControl']
+            });
+            
+            // Add placemark
+            const placemark = new ymaps.Placemark(location.coordinates, {
+                hintContent: location.title,
+                balloonContent: `<strong>${location.title}</strong><br>${location.address}`
+            }, {
+                preset: 'islands#blackDotIconWithCaption',
+                iconColor: '#1a1a1a'
+            });
+            
+            myMap.geoObjects.add(placemark);
+            
+            // Update directions link
+            document.getElementById('yandex-directions').href = location.yandexUrl;
+        }
+        
+        // Map modal
+        function showMap(locationId) {
+            const mapModal = document.getElementById('map-modal');
+            const mapTitle = document.getElementById('map-title');
+            const mapAddress = document.getElementById('map-address');
+            
+            const location = locations.find(loc => loc.id === locationId);
+            
+            if (location) {
+                mapTitle.innerText = location.title;
+                mapAddress.innerText = location.address;
+                currentLocationId = locationId;
+                
+                mapModal.classList.remove('hidden');
+                
+                // Create map after modal is visible
+                setTimeout(() => {
+                    createMap(locationId);
+                }, 100);
+            }
+        }
+        
+        document.getElementById('close-map').addEventListener('click', function() {
+            document.getElementById('map-modal').classList.add('hidden');
+        });
+        
+        // RSVP form submission
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('success-modal').classList.remove('hidden');
+        });
+        
+        document.getElementById('close-success').addEventListener('click', function() {
+            document.getElementById('success-modal').classList.add('hidden');
+        });
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const mapModal = document.getElementById('map-modal');
+            const successModal = document.getElementById('success-modal');
+            
+            if (e.target === mapModal) {
+                mapModal.classList.add('hidden');
+            }
+            
+            if (e.target === successModal) {
+                successModal.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Parallax effect for background images
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrollPosition * speed);
+                element.style.backgroundPosition = `center ${yPos}px`;
+            });
+        });
+        
+        // Reveal animations on scroll
+        function revealOnScroll() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('animate-fade-in');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
+</span></p>
