@@ -719,6 +719,33 @@
     
         
     <script>
+		  document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const data = {
+			  name: document.getElementById('name').value,
+			  phone: document.getElementById('phone').value,
+			  attendance: document.querySelector('input[name="attendance"]:checked').value,
+			  guests: document.getElementById('guests').value,
+			  message: document.getElementById('message').value
+			};
+
+			fetch('https://script.google.com/macros/s/AKfycbxQWZw5uu4bKja46qk4BBY84FSwk6f17dBUIfWYmTdvrXB05JgB5g_dNdMv2PmRj8Kw/exec', {
+			  method: 'POST',
+			  body: JSON.stringify(data),
+			  headers: {
+				'Content-Type': 'application/json'
+			  }
+			}).then(response => {
+			  if (response.ok) {
+				// Optional: show success modal or reset form
+				alert("Շնորհակալություն, Ձեր պատասխանը ուղարկված է։");
+				document.getElementById('rsvp-form').reset();
+			  } else {
+				alert("Սխալ տեղի ունեցավ։ Խնդրում ենք փորձել կրկին։");
+			  }
+			});
+		  });
         // Mobile menu toggle
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
