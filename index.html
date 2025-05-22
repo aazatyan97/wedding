@@ -398,9 +398,12 @@
                         </div>
                     </div>
                     
-                    <div class="text-center md:text-left">
-                        <a href="#rsvp" class="btn-primary">Հաստատել Մասնակցությունը</a>
-                    </div>
+					<div class="flex justify-center md:justify-start">
+					  <a href="#rsvp"
+						 class="btn-primary inline-block px-6 py-3 text-white rounded shadow hover:bg-blue-700 transition">
+						 Հաստատել Մասնակցությունը
+					  </a>
+					</div>
                 </div>
                 
                 <div class="calendar max-w-sm mx-auto">
@@ -574,29 +577,32 @@
 		</div>
 	</section>
 
-
     <!-- 4. Event Details Section - Reception -->
-	<section class="section-bg min-h-screen flex items-center"
-	style="background-image: url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'&gt;&lt;defs&gt;&lt;linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'&gt;&lt;stop offset='0%' style='stop-color:rgb(90,90,90);stop-opacity:1' /&gt;&lt;stop offset='100%' style='stop-color:rgb(50,50,50);stop-opacity:1' /&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='1200' height='800' fill='url(%23grad)' /&gt;&lt;circle cx='600' cy='400' r='250' fill='%23555' /&gt;&lt;rect x='500' y='350' width='200' height='100' fill='%23666' /&gt;&lt;/svg&gt;&quot;);">
-        <div class="section-overlay"></div>
-        <div class="container mx-auto px-6 py-24 relative z-10">
+	<section id="event" class="relative min-h-screen flex items-center justify-center bg-center bg-no-repeat bg-contain bg-white"
+			 style="background-image: url('zal.png');">
+        <div class="section-overlay-church"></div>
+		<div class="container mx-auto px-6 py-24 relative z-10 text-center max-w-2xl text-white">
+
             <div class="max-w-2xl mx-auto">
-                <div class="event-card p-10 text-center">
+                <div class="text-center">
                     <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-8">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+								d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-light text-gray-900 mb-6 serif">Հարսանեկան Խնջույք</h3>
+					<h3 class="text-2xl font-light mb-6 font-serif drop-shadow-md">Հարսանեկան Խնջույք</h3>
+
                     <div class="space-y-4 mb-8">
-                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
-                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Ժամ:</span><br>17:00 - 24:00</p>
-                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Վայր:</span><br>Villa Hills</p>
-                        <p class="text-gray-600"><span class="text-gray-400 uppercase text-sm tracking-wider">Հասցե:</span><br>Ներքին Պտղնի</p>
+                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
+                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ժամ:</span><br>17:00 - 24:00</p>
+                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Վայր:</span><br>Villa Hills</p>
+                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Հասցե:</span><br>Ներքին Պտղնի</p>
                     </div>
-                    <button class="btn-primary" onclick="showMap(2)">
-                        Տեսնել Քարտեզը
-                    </button>
+				<button class="mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-900 transition" onclick="showMap(2)">
+					Տեսնել Քարտեզը
+				</button>
+
                 </div>
             </div>
         </div>
