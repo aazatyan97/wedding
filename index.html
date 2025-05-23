@@ -283,6 +283,29 @@
 			background-color: rgba(0, 0, 0, 0.40); /* Increased opacity for better contrast */
 			z-index: 1;
 		}
+		.section-overlay-zal {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.00); /* Increased opacity for better contrast */
+			z-index: 1;
+		}
+		.camera-button {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		  background: none;
+		  border: none;
+		  padding: 0;
+		  cursor: pointer;
+			}
+		.camera-button img {
+		  width: min(20vw, 200px);  /* use 20vw on small screens, but never more than 100px */
+		  height: auto;
+		}
+		
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -321,6 +344,7 @@
             .hero-title {
                 font-size: 2.5rem;
             }
+
         }
     </style>
 </head>
@@ -334,7 +358,8 @@
                     <a href="#home" class="nav-link">Գլխավոր</a>
                     <a href="#invitation" class="nav-link">Հրավեր</a>
                     <a href="#schedule" class="nav-link">Ծրագիր</a>
-                    <a href="#event" class="nav-link">Միջոցառում</a>
+                    <a href="#event_church" class="nav-link">Պսակադրություն</a>
+                    <a href="#event" class="nav-link">Հարսանեկան Խնջույք</a>
                     <a href="#rsvp" class="nav-link">RSVP</a>
                 </div>
                 <button class="md:hidden text-gray-700" id="menu-toggle">
@@ -485,9 +510,9 @@
                             <div class="timeline-line flex-grow h-24"></div>
                         </div>
                         <div class="text-white">
-                            <h4 class="text-xl font-light">14:30</h4>
-                            <p class="text-gray-200 mt-1">Հավաքվում ենք եկեղեցում</p>
-                            <p class="text-gray-300 text-sm mt-1">Հյուրերի ժամանում</p>
+                            <h4 class="text-xl font-light">15:00</h4>
+                            <p class="text-gray-200 mt-1">Պսակադրության արարողություն</p>
+                            <p class="text-gray-300 text-sm mt-1">Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</p>
                         </div>
                     </div>
                     
@@ -497,9 +522,9 @@
                             <div class="timeline-line flex-grow h-24"></div>
                         </div>
                         <div class="text-white">
-                            <h4 class="text-xl font-light">15:00</h4>
-                            <p class="text-gray-200 mt-1">Պսակադրության արարողություն</p>
-                            <p class="text-gray-300 text-sm mt-1">Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</p>
+                            <h4 class="text-xl font-light">16:30</h4>
+                            <p class="text-gray-200 mt-1">Զագսավորման արարողություն</p>
+                            <p class="text-gray-300 text-sm mt-1">Villa Hills</p>
                         </div>
                     </div>
                     
@@ -522,8 +547,8 @@
                         </div>
                         <div class="text-white">
                             <h4 class="text-xl font-light">18:00</h4>
-                            <p class="text-gray-200 mt-1">Ընթրիք</p>
-                            <p class="text-gray-300 text-sm mt-1">Տոնական ճաշկերույթ</p>
+                            <p class="text-gray-200 mt-1">Ընթրիք, Տոնական ճաշկերույթ</p>
+                            <p class="text-gray-300 text-sm mt-1">Պարեր և տոնակատարություն</p>
                         </div>
                     </div>
                     
@@ -533,9 +558,8 @@
 							<div class="timeline-line flex-grow h-24"></div>
                         </div>
                         <div class="text-white">
-                            <h4 class="text-xl font-light">20:00</h4>
-                            <p class="text-gray-200 mt-1">Պարեր և տոնակատարություն</p>
-                            <p class="text-gray-300 text-sm mt-1">Երաժշտություն, պարեր և զվարճանք</p>
+                            <h4 class="text-xl font-light">23:00</h4>
+                            <p class="text-gray-200 mt-1">Միջոցառման ավարտ</p>
                         </div>
                     </div>
                 </div>
@@ -544,7 +568,7 @@
     </section>
 
 	<!-- 4. Event Details Section - Ceremony -->
-	<section id="event" class="relative min-h-screen flex items-center justify-center bg-center bg-no-repeat bg-contain bg-white"
+	<section id="event_church" class="relative min-h-screen flex items-center justify-center bg-center bg-no-repeat bg-contain bg-white"
 			 style="background-image: url('church.png');">
 		
 		<!-- Darker overlay for better readability -->
@@ -552,21 +576,28 @@
 
 		<!-- Content -->
 		<div class="container mx-auto px-6 py-24 relative z-10 text-center max-w-2xl text-white">
-			<h2 class="text-3xl mb-2 font-serif text-white drop-shadow-md">Միջոցառման Մանրամասները</h2>
-			<div class="elegant-divider bg-white h-0.5 w-24 mx-auto mb-8"></div>
-
-			<div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-6">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-						  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+					<div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-6">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+				<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(36.059143968871595 16.136964980544718) scale(2.03 2.03)">
+					<path d="M 89.426 53.563 l -19.54 -9.199 V 32.299 c 0 -0.357 -0.19 -0.688 -0.501 -0.866 L 46 17.958 V 8.563 h 6.208 c 0.553 0 1 -0.448 1 -1 s -0.447 -1 -1 -1 H 46 V 1.968 c 0 -0.552 -0.448 -1 -1 -1 s -1 0.448 -1 1 v 4.594 h -6.208 c -0.552 0 -1 0.448 -1 1 s 0.448 1 1 1 H 44 v 9.396 L 20.615 31.433 c -0.31 0.178 -0.501 0.509 -0.501 0.866 v 12.064 l -19.54 9.199 C 0.224 53.727 0 54.079 0 54.467 v 33.565 c 0 0.553 0.448 1 1 1 h 88 c 0.553 0 1 -0.447 1 -1 V 54.467 C 90 54.079 89.776 53.727 89.426 53.563 z M 88 87.032 H 2 V 55.102 l 19.54 -9.199 c 0.351 -0.165 0.574 -0.518 0.574 -0.905 V 32.877 L 45 19.69 l 22.886 13.188 v 12.121 c 0 0.387 0.224 0.74 0.574 0.905 L 88 55.102 V 87.032 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+					<path d="M 53.179 89.032 H 36.822 c -0.552 0 -1 -0.447 -1 -1 V 67.497 c 0 -5.061 4.117 -9.178 9.178 -9.178 c 5.062 0 9.179 4.117 9.179 9.178 v 20.535 C 54.179 88.585 53.731 89.032 53.179 89.032 z M 37.822 87.032 h 14.357 V 67.497 c 0 -3.958 -3.221 -7.178 -7.179 -7.178 s -7.178 3.22 -7.178 7.178 V 87.032 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+					<path d="M 76.081 78.255 h -9.582 c -0.553 0 -1 -0.447 -1 -1 V 65.226 c 0 -3.193 2.598 -5.791 5.791 -5.791 s 5.791 2.598 5.791 5.791 v 12.029 C 77.081 77.808 76.634 78.255 76.081 78.255 z M 67.499 76.255 h 7.582 V 65.226 c 0 -2.091 -1.7 -3.791 -3.791 -3.791 s -3.791 1.7 -3.791 3.791 V 76.255 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+					<path d="M 23.501 78.255 h -9.582 c -0.552 0 -1 -0.447 -1 -1 V 65.226 c 0 -3.193 2.598 -5.791 5.791 -5.791 s 5.791 2.598 5.791 5.791 v 12.029 C 24.501 77.808 24.053 78.255 23.501 78.255 z M 14.919 76.255 h 7.582 V 65.226 c 0 -2.091 -1.701 -3.791 -3.791 -3.791 s -3.791 1.7 -3.791 3.791 V 76.255 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+					<path d="M 45 42.049 c -3.104 0 -5.629 -2.525 -5.629 -5.629 s 2.525 -5.629 5.629 -5.629 c 3.104 0 5.629 2.525 5.629 5.629 S 48.104 42.049 45 42.049 z M 45 32.791 c -2.001 0 -3.629 1.628 -3.629 3.629 c 0 2.001 1.628 3.629 3.629 3.629 s 3.629 -1.628 3.629 -3.629 C 48.629 34.418 47.001 32.791 45 32.791 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+				</g>
 				</svg>
 			</div>
 
-			<h3 class="text-2xl font-light mb-6 font-serif drop-shadow-md">Պսակադրություն</h3>
+			<h2 class="text-3xl mb-2 font-serif text-white drop-shadow-md">Պսակադրություն</h2>
+			<div class="elegant-divider bg-white h-0.5 w-24 mx-auto mb-8"></div>
+
+
+
+			
 
 			<div class="space-y-4 mb-6">
 				<p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
-				<p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ժամ:</span><br>14:30 - 15:30</p>
+				<p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ժամ:</span><br>15:00 - 15:30</p>
 				<p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Վայր:</span><br>Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</p>
 				<p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Հասցե:</span><br>12 Ռուսաստանի փողոց, Աբովյան 2204</p>
 			</div>
@@ -580,7 +611,8 @@
     <!-- 4. Event Details Section - Reception -->
 	<section id="event" class="relative min-h-screen flex items-center justify-center bg-center bg-no-repeat bg-contain bg-white"
 			 style="background-image: url('zal.png');">
-        <div class="section-overlay-church"></div>
+	 <div class="section-overlay-church"></div>
+
 		<div class="container mx-auto px-6 py-24 relative z-10 text-center max-w-2xl text-white">
 
             <div class="max-w-2xl mx-auto">
@@ -591,11 +623,13 @@
 								d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
                         </svg>
                     </div>
-					<h3 class="text-2xl font-light mb-6 font-serif drop-shadow-md">Հարսանեկան Խնջույք</h3>
+					<h2 class="text-2xl font-light mb-6 font-serif drop-shadow-md">Հարսանեկան Խնջույք</h2>
+					<div class="elegant-divider bg-white h-0.5 w-24 mx-auto mb-8"></div>
+					
 
                     <div class="space-y-4 mb-8">
                         <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ամսաթիվ:</span><br>Օգոստոսի 14, 2025</p>
-                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ժամ:</span><br>17:00 - 24:00</p>
+                        <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Ժամ:</span><br>17:00 - 23:00</p>
                         <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Վայր:</span><br>Villa Hills</p>
                         <p class="text-white drop-shadow"><span class="text-gray-300 uppercase text-sm tracking-wider">Հասցե:</span><br>Ներքին Պտղնի</p>
                     </div>
@@ -608,7 +642,33 @@
         </div>
     </section>
 
-    <!-- 5. RSVP Section -->
+
+
+    <!-- 5. Photo Section -->
+    <section id="photo" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center text-2xl mb-2">լուսանկարներ</h2>
+            <div class="elegant-divider"></div>
+			            <div class="max-w-2xl mx-auto mt-16">
+				<p style="text-align: center; font-family: sans-serif;">
+				  Մենք ստեղծել ենք Google Drive, որտեղ կարող եք ուղարկել հարսանիքի օրվա ֆոտո/վիդեո նյութերը։<br>
+				  Եթե ունես լուսանկարներ կամ տեսանյութեր, որոնք կցանկանաս կիսել մեզ հետ, սեղմիր տեսախցիկի վրա և վերբեռնի՛ր։<br><br><br>
+				  
+				</p>
+			<button class="camera-button" onclick="window.open('https://drive.google.com/drive/folders/1Q2wsgcm-7ubX8V4M_y3njQOn89KCXd28?usp=drive_link', '_blank')">
+				<img src="camera.png" alt="Camera Button" />
+
+			</button>
+				<p style="text-align: center; font-family: sans-serif;">
+					<br><br>Շնորհակալ ենք կիսվելու համար։ ❤️
+				</p>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6. RSVP Section -->
     <section id="rsvp" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="section-title text-center text-2xl mb-2">Հաստատեք Ձեր Մասնակցությունը</h2>
